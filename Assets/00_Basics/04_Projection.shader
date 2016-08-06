@@ -13,15 +13,15 @@
       };
 
       v2f vert (appdata v) {
-				v2f o;
+        v2f o;
         o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
-				return o;
-			}
+        return o;
+      }
 
       fixed4 frag (v2f i) : SV_Target {
-				return fixed4(1,1,1,1);
-			}
-			ENDCG
+        return fixed4(1,1,1,1);
+      }
+      ENDCG
     }
   }
 }

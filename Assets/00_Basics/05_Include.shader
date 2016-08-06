@@ -27,7 +27,7 @@
       CGPROGRAM
       #pragma vertex vert
       #pragma fragment frag
-			ENDCG
+      ENDCG
     }
   }
 }

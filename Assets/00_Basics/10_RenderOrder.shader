@@ -5,7 +5,7 @@ Shader "Room/10_RenderOrder" {
   }
   SubShader {
     Tags { "RenderType"="Opaque" "Queue"="Geometry" }
-		LOD 100
+    LOD 100
     ZTest True
     ZWrite False
 

@@ -27,7 +27,7 @@ Shader "Room/06_Suitable" {
       #pragma only_renderers ps4
       #pragma vertex vert
       #pragma fragment frag_red
-			ENDCG
+      ENDCG
     }
   }
   SubShader {
@@ -35,7 +35,7 @@ Shader "Room/06_Suitable" {
       CGPROGRAM
       #pragma vertex vert
       #pragma fragment frag_blue
-			ENDCG
+      ENDCG
     }
   }
 

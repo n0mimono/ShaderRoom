@@ -5,7 +5,7 @@ Shader "Room/11_Transparent" {
   }
   SubShader {
     Tags { "RenderType"="Transparent" "Queue"="Transparent" }
-		LOD 100
+    LOD 100
     ZWrite False
     Blend SrcAlpha OneMinusSrcAlpha
 
