@@ -44,6 +44,9 @@ Material:
         name: _HeightScale
       second: 0.2
     - first:
+        name: _Offset
+      second: 0.17
+    - first:
         name: _Threshold
-      second: 0.37
+      second: 0.21
     m_Colors: []

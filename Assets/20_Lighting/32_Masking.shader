@@ -3,7 +3,7 @@ Shader "Room/32_Masking" {
     _Mask ("Mask", 2D) = "white" {}
     _Tex0 ("Tex 0", 2D) = "white" {}
     _Tex1 ("Tex 1", 2D) = "white" {}
-    _Threshold ("Threshold", Range(0,1)) = 0.5
+    _Offset ("Offset", Range(-1,1)) = 0
   }
   SubShader {
     Pass {
@@ -18,7 +18,7 @@ Shader "Room/32_Masking" {
       uniform sampler2D _Mask;
       uniform sampler2D _Tex0;
       uniform sampler2D _Tex1;
-      uniform float _Threshold;
+      uniform float _Offset;
 
       struct v2f {
         float4 pos : SV_POSITION;
@@ -33,12 +33,8 @@ Shader "Room/32_Masking" {
       }
 
       fixed4 frag (v2f i) : SV_Target {
-        float mask = tex2D(_Mask, i.uv).r;
-        if (mask > _Threshold) {
-          return tex2D(_Tex0, i.uv);
-        } else {
-          return tex2D(_Tex1, i.uv);
-        }
+        float mask = saturate(round(tex2D(_Mask, i.uv).r + _Offset));
+        return tex2D(_Tex0, i.uv) * mask + tex2D(_Tex1, i.uv) * (1 - mask);
       }
       ENDCG
     }
