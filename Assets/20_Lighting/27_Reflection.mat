@@ -24,7 +24,7 @@ Material:
     m_Floats:
     - first:
         name: _Mip
-      second: 2.44
+      second: 2.2
     - first:
         name: _UseBuiltinMap
       second: 0

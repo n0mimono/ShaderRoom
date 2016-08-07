@@ -40,10 +40,10 @@ Shader "Room/27_Reflection" {
 
         #ifdef _USE_BUITIN_MAP
           half4 rgbm = UNITY_SAMPLE_TEXCUBE_LOD(unity_SpecCube0, reflectDir, _Mip);
-          return rgbm * 0.5;
+          return rgbm * 2;
         #else
           half4 rgbm = texCUBElod(_CubeMap, float4(reflectDir, _Mip));
-          return rgbm;
+          return rgbm * 2;
         #endif
       }
 
